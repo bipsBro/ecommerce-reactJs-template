@@ -11,7 +11,12 @@ import theme from './utils/theme';
 
 const store = createStore(rootReducer);
 
+const height = 100;
+
 const GlobalStyle = createGlobalStyle`
+  :root {
+    --height: ${ height }%;
+  }
   * {
     box-sizing: border-box !important;
     -ms-overflow-style: none;
