@@ -1,0 +1,46 @@
+{
+  "extends": ["airbnb"],
+  "plugins": ["react"],
+  "rules": {
+    "semi": ["error", "always"],
+    "quotes": ["error", "single"],
+    "jsx-quotes": ["error", "prefer-single"],
+    "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }],
+    "space-before-function-paren": ["error", "always"],
+    "object-curly-spacing": ["error", "always"],
+    "template-curly-spacing": ["error", "always"],
+    "react/jsx-indent": ["error", 2],
+    "react/jsx-curly-spacing": ["error", { "when": "always", "children": true }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/prop-types": [0],
+    "react/no-array-index-key": [0],
+    "react/no-string-refs": [0],
+    "react/no-danger": [0],
+    "camelcase": ["off"],
+    "consistent-return": ["off"],
+    "no-console": ["error", { "allow": ["warn", "error"] } ],
+    "no-return-assign": ["off"],
+    "guard-for-in": ["off"],
+    "no-restricted-syntax": ["off"],
+    "no-plusplus": ["off"],
+    "no-continue": ["off"],
+    "no-nested-ternary": ["off"],
+    "no-param-reassign": ["off"],
+    "no-loop-func": ["off"],
+    "no-underscore-dangle": ["off"],
+    "no-await-in-loop": ["off"],
+    "max-len": ["off"],
+    "import/no-named-as-default-member": ["off"],
+    "react/jsx-no-bind": ["off"],
+    "jsx-a11y/img-redundant-alt": [0]
+  },
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "globals": {
+    "gapi": true,
+    "FB": true
+  }
+}
