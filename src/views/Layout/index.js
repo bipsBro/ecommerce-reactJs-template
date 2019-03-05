@@ -6,7 +6,6 @@ import { withRouter } from 'react-router';
 import * as UiActionCreators from '../../redux/ui';
 
 import {
-  ContentColumnContainer,
   LayoutContainer,
 } from './StyledComponents';
 

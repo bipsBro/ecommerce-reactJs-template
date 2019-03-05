@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import rootReducer from './redux';
 
-import AppView from './views/index'
+import AppRoute from './routers/index';
 import theme from './utils/theme';
 
 const store = createStore(rootReducer);
@@ -289,7 +289,7 @@ const App = () => (
       <ThemeProvider theme={ theme }>
         <React.Fragment>
           <GlobalStyle />
-          <AppView />
+          <AppRoute />
         </React.Fragment>
       </ThemeProvider>
     </BrowserRouter>
