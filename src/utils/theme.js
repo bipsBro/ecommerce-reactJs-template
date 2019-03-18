@@ -16,4 +16,8 @@ export default {
     pinkRed: '#e84363',
     cerulean: '#0085cc',
   },
+  cardProps: {
+    single: false,
+    double: false,
+  }
 };

@@ -32,15 +32,15 @@ const ProductContainer = styled.div`
 const ProductCard = styled.div`
   flex-grow: 1;
   margin: 1%;
-  flex-basis: 23%;
 
   display: flex;
   flex-direction: column;
+  ${ ({theme}) => ( theme.cardProps.double ? 'flex-basis: 98%' : (theme.cardProps.single ? 'flex-basis: 98%' : 'flex-basis: 23%')) };
   
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
 `;
 
-const Image = styled.img``
+const Image = styled.img``;
 
 const ProductImageContainer = styled.div`
   & ${ Image } {
@@ -61,6 +61,41 @@ const DummyContent = (
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
   </React.Fragment>
 );
+
+const productData = [
+  {
+    name: 'Winter Jacket',
+    price: { currency: 'Usd', amount: 10 },
+    productImg: hoodImage1,
+  },
+  {
+    name: 'Winter Jacket',
+    price: { currency: 'Usd', amount: 10 },
+    productImg: hoodImage2,
+  },
+  {
+    name: 'Winter Jacket',
+    price: { currency: 'Usd', amount: 10 },
+    productImg: hoodImage2,
+  },
+  {
+    name: 'Winter Jacket',
+    price: { currency: 'Usd', amount: 10 },
+    productImg: hoodImage2,
+  },
+];
+
+const contentBody = productData.map((product, index) => (
+  <ProductCard key={ `product-${ product.name }-${ index }` }>
+    <ProductImageContainer>
+      <Image src={ product.productImg } />
+    </ProductImageContainer>
+    <ProductInfoContainer>
+      <h5>{ product.name }</h5>
+      { product.price && <h6>{ `${ product.price.currency } ${ product.price.amount }` }</h6> }
+    </ProductInfoContainer>
+  </ProductCard>
+));
 
 const content = (
   <React.Fragment>
@@ -86,7 +121,7 @@ const content = (
         </ProductSortContainer>
       </ProductFilterContainer>
       <ProductContainer>
-        <ProductCard>
+        <ProductCard single>
           <ProductImageContainer>
             <Image src={ hoodImage1 } />
           </ProductImageContainer>
@@ -95,69 +130,7 @@ const content = (
             <h6>$99.99</h6>
           </ProductInfoContainer>
         </ProductCard>
-        <ProductCard>
-          <ProductImageContainer>
-            <Image src={ hoodImage2 } />
-          </ProductImageContainer>
-          <ProductInfoContainer>
-            <h5>Winter Jacket</h5>
-            <h6>$99.99</h6>
-          </ProductInfoContainer>
-        </ProductCard>
-        <ProductCard>
-          <ProductImageContainer>
-            <Image src={ hoodImage2 } />
-          </ProductImageContainer>
-          <ProductInfoContainer>
-            <h5>Winter Jacket</h5>
-            <h6>$99.99</h6>
-          </ProductInfoContainer>
-        </ProductCard>
-        <ProductCard>
-          <ProductImageContainer>
-            <Image src={ hoodImage2 } />
-          </ProductImageContainer>
-          <ProductInfoContainer>
-            <h5>Winter Jacket</h5>
-            <h6>$99.99</h6>
-          </ProductInfoContainer>
-        </ProductCard>
-        <ProductCard>
-          <ProductImageContainer>
-            <Image src={ hoodImage2 } />
-          </ProductImageContainer>
-          <ProductInfoContainer>
-            <h5>Winter Jacket</h5>
-            <h6>$99.99</h6>
-          </ProductInfoContainer>
-        </ProductCard>
-        <ProductCard>
-          <ProductImageContainer>
-            <Image src={ hoodImage2 } />
-          </ProductImageContainer>
-          <ProductInfoContainer>
-            <h5>Winter Jacket</h5>
-            <h6>$99.99</h6>
-          </ProductInfoContainer>
-        </ProductCard>
-        <ProductCard>
-          <ProductImageContainer>
-            <Image src={ hoodImage2 } />
-          </ProductImageContainer>
-          <ProductInfoContainer>
-            <h5>Winter Jacket</h5>
-            <h6>$99.99</h6>
-          </ProductInfoContainer>
-        </ProductCard>
-        <ProductCard>
-          <ProductImageContainer>
-            <Image src={ hoodImage2 } />
-          </ProductImageContainer>
-          <ProductInfoContainer>
-            <h5>Winter Jacket</h5>
-            <h6>$99.99</h6>
-          </ProductInfoContainer>
-        </ProductCard>
+        { contentBody }
       </ProductContainer>
     </ContentColumnContainer>
     <ContentColumnContainer>
