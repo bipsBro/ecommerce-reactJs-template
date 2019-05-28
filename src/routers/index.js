@@ -1,19 +1,15 @@
 import React from 'react';
 
 import IndexPage from '../views/index';
-import ProductPage from '../views/product';
+// import ProductPage from '../views/product';
 
-import RouterV1 from '../utils/index';
+import { RouterV1 } from '../utils/index';
 
 const routerData = [
   {
     component: IndexPage,
     path: '/',
     exact: true,
-  },
-  {
-    component: ProductPage,
-    path: '/product',
   },
 ];
 

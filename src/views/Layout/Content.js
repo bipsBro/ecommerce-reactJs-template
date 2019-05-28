@@ -35,7 +35,7 @@ const ProductCard = styled.div`
 
   display: flex;
   flex-direction: column;
-  ${ ({theme}) => ( theme.cardProps.double ? 'flex-basis: 98%' : (theme.cardProps.single ? 'flex-basis: 98%' : 'flex-basis: 23%')) };
+  ${ ({ theme }) => (theme.cardProps.double ? 'flex-basis: 98%' : (theme.cardProps.single ? 'flex-basis: 98%' : 'flex-basis: 23%')) };
   
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
 `;

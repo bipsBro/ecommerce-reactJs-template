@@ -12,8 +12,10 @@ const RouterV1 = ({ routerData, handleError }) => (routerData ? (
         component={ route.component }
       />
     )) }
-    { handleError && <Route path={'*'} component={ NotfoundPage } /> }
+    { handleError && <Route path='*' component={ NotfoundPage } /> }
   </Switch>
 ) : null);
 
-export default RouterV1;
+export {
+  RouterV1,
+}
